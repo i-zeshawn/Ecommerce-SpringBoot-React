@@ -11,15 +11,16 @@ const responsive = {
     1922: {items: 5},
 };
 
-const HomeSectionCarousel = () => {
+const HomeSectionCarousel = ({data, sectionName}) => {
     const [activeIndex, setActiveIndex] = useState(0);
-    const items = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map((item) => (<HomeSectionCard/>));
+    const items = data.map((item) => (<HomeSectionCard product={item}/>));
     const slidePrev = () => setActiveIndex(activeIndex - 1);
     const slideNext = () => setActiveIndex(activeIndex + 1);
 
     const syncActiveIndex = (item) => setActiveIndex(item);
     return (
-        <div className={"border border-black"}>
+        <div className={"border"}>
+            <h2 className={"text-2xl font-extrabold text-gray-800 py-5"}>{sectionName}</h2>
             <div className={"relative p-5"}>
 
                 <AliceCarousel
