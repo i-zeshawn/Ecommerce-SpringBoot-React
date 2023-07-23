@@ -14,7 +14,7 @@ const items = [1, 1, 1, 1, 1].map((item) => (<HomeSectionCard/>));
 
 const HomeSectionCarousel = () => {
     return (
-        <div className={"relative px-4 lg:px-8"}>
+        <div className={"px-4 lg:px-8 border border-black"}>
             <div className={"relative p-5"}>
 
                 <AliceCarousel
@@ -22,15 +22,28 @@ const HomeSectionCarousel = () => {
                     disableButtonsControls
                     autoPlayInterval={1000}
                     infinite
-                    responsive={responsive}/>
-                <Button variant={"contained"} className={"z-50"}
+                    responsive={responsive}
+                    disableDotsControls
+                />
+                <Button variant={"contained"} className={"z-50 bg-white"}
+                        sx={{
+                            position: 'absolute',
+                            top: "8rem",
+                            left: "0rem",
+                            transform: "translateX(50%) rotate(-90deg)",
+                            bgcolor: "white",
+                        }} aria-label={"next"}>
+                    <KeyboardArrowLeft sx={{transform: "rotate(90deg)", color: "black"}}/>
+                </Button>
+                <Button variant={"contained"} className={"z-50 bg-white"}
                         sx={{
                             position: 'absolute',
                             top: "8rem",
                             right: "0rem",
-                            transform: "translateX(50%) rotate(90deg)"
+                            transform: "translateX(50%) rotate(90deg)",
+                            bgcolor: "white",
                         }} aria-label={"next"}>
-                    <KeyboardArrowLeft sx={{transform: "rotate(90deg)"}}/>
+                    <KeyboardArrowLeft sx={{transform: "rotate(90deg)", color: "black"}}/>
                 </Button>
             </div>
 

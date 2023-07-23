@@ -5,7 +5,10 @@ const HomePage = () => {
     return (
         <div>
             <MainCarousel/>
-            <div>
+            <div className={"space-y-10 py-20"}>
+                <HomeSectionCarousel/>
+                <HomeSectionCarousel/>
+                <HomeSectionCarousel/>
                 <HomeSectionCarousel/>
             </div>
         </div>
